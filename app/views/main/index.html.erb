@@ -1,0 +1,7 @@
+<h1><%=  t(:hello) -%></h1>
+<p>Kakukk</p>
+<p><%= l Time.now, :format => :short %></p><br/><br/>
+
+<%= link_to t(:handle_countries), countries_path %>
+
+<%= netzke :countries, :class_name => "Netzke::Basepack::GridPanel", :model => "Country",  :columns => [{ :name => "code"},{ :name => "name"},{ :name => "created_at"}] %>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lvtapp</title>
+  <%= netzke_init %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= form_tag url_for(:controller => :main, :action => :set_locale) do %>
+  Nyelv: <%= select_tag :locale, options_for_select(%w(en hu),I18n.locale.to_s), :onchange => "this.form.submit();"  %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
